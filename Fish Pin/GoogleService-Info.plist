@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>280186764401-ckai0buntv8jsk2sad5vo3hj77u5e37e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.280186764401-ckai0buntv8jsk2sad5vo3hj77u5e37e</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCqCVJ_mhb_T4GrwXXlBIBHid72qQm5l7g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>280186764401</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>KlubDevs.Fish-Pin</string>
+	<key>PROJECT_ID</key>
+	<string>fish-pin-6b9a2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fish-pin-6b9a2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:280186764401:ios:592930ef7c23ba89daefd0</string>
+</dict>
+</plist>
