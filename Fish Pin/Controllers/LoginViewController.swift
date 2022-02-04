@@ -24,6 +24,8 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+        
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     @IBAction func registerSegueTapped(_ sender: UIButton) {

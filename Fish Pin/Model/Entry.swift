@@ -10,14 +10,14 @@ import MapKit
 
 struct Entry {
     
-    var location: CLLocationCoordinate2D
+    //var location: CLLocationCoordinate2D
     var weather: String
     var fishType: String
     var lure: String
     var weight: String
     var length: String
-    var time: Date
-    var date: Date
+    var time: String
+    var date: String
     var notes: String
     
     

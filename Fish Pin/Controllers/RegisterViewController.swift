@@ -22,7 +22,8 @@ class RegisterViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.navigationBar.tintColor = .white
-
+        
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     @IBAction func registerTapped(_ sender: UIButton) {

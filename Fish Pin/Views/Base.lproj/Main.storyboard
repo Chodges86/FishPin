@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -128,14 +129,66 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vsb-oX-QCQ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TX6-Ci-yFl">
+                                <rect key="frame" x="269" y="796" width="65" height="65"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66N-YC-e8K">
+                                        <rect key="frame" x="5" y="5" width="55" height="55"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="gearshape" catalog="system"/>
+                                        <connections>
+                                            <action selector="settingsButtonPressed:" destination="rvv-9T-bgk" eventType="touchUpInside" id="RaE-pl-M3r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="66N-YC-e8K" firstAttribute="centerX" secondItem="TX6-Ci-yFl" secondAttribute="centerX" id="HAv-bF-Lxu"/>
+                                    <constraint firstAttribute="trailing" secondItem="66N-YC-e8K" secondAttribute="trailing" constant="5" id="IBc-q7-mG6"/>
+                                    <constraint firstItem="66N-YC-e8K" firstAttribute="centerY" secondItem="TX6-Ci-yFl" secondAttribute="centerY" id="INQ-Sf-DzN"/>
+                                    <constraint firstAttribute="width" constant="65" id="X4g-7u-KhR"/>
+                                    <constraint firstAttribute="height" constant="65" id="XRZ-pN-D0y"/>
+                                    <constraint firstAttribute="bottom" secondItem="66N-YC-e8K" secondAttribute="bottom" constant="5" id="ulX-tv-gVe"/>
+                                    <constraint firstItem="66N-YC-e8K" firstAttribute="leading" secondItem="TX6-Ci-yFl" secondAttribute="leading" constant="5" id="vps-Yj-ea1"/>
+                                    <constraint firstItem="66N-YC-e8K" firstAttribute="top" secondItem="TX6-Ci-yFl" secondAttribute="top" constant="5" id="xAB-Lp-FS5"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vug-sT-kCO">
+                                <rect key="frame" x="329" y="726" width="65" height="65"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9z-H0-H2L">
+                                        <rect key="frame" x="5" y="5" width="55" height="55"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="folder" catalog="system"/>
+                                        <connections>
+                                            <action selector="recordButtonPressed:" destination="rvv-9T-bgk" eventType="touchUpInside" id="Nqn-pO-HW6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="X9z-H0-H2L" secondAttribute="trailing" constant="5" id="4Eb-lJ-nqU"/>
+                                    <constraint firstItem="X9z-H0-H2L" firstAttribute="centerX" secondItem="Vug-sT-kCO" secondAttribute="centerX" id="Hne-YT-12o"/>
+                                    <constraint firstItem="X9z-H0-H2L" firstAttribute="top" secondItem="Vug-sT-kCO" secondAttribute="top" constant="5" id="NOO-zF-8pU"/>
+                                    <constraint firstAttribute="height" constant="65" id="UvU-RO-bJu"/>
+                                    <constraint firstAttribute="width" constant="65" id="crN-aq-fNj"/>
+                                    <constraint firstAttribute="bottom" secondItem="X9z-H0-H2L" secondAttribute="bottom" constant="5" id="jPp-lM-dH4"/>
+                                    <constraint firstItem="X9z-H0-H2L" firstAttribute="leading" secondItem="Vug-sT-kCO" secondAttribute="leading" constant="5" id="tVK-N9-AKI"/>
+                                    <constraint firstItem="X9z-H0-H2L" firstAttribute="centerY" secondItem="Vug-sT-kCO" secondAttribute="centerY" id="xKh-J4-jyD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Xm-Yy-O95"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vsb-oX-QCQ" firstAttribute="top" secondItem="vW0-0W-qbC" secondAttribute="top" id="DCy-de-5A0"/>
+                            <constraint firstItem="5Xm-Yy-O95" firstAttribute="trailing" secondItem="Vug-sT-kCO" secondAttribute="trailing" constant="20" id="Nma-gk-6wI"/>
+                            <constraint firstAttribute="bottom" secondItem="TX6-Ci-yFl" secondAttribute="bottom" constant="35" id="UMI-dn-8Cm"/>
                             <constraint firstAttribute="trailing" secondItem="vsb-oX-QCQ" secondAttribute="trailing" id="VSl-DE-Tj4"/>
                             <constraint firstItem="vsb-oX-QCQ" firstAttribute="leading" secondItem="vW0-0W-qbC" secondAttribute="leading" id="aNU-Z4-B2e"/>
                             <constraint firstAttribute="bottom" secondItem="vsb-oX-QCQ" secondAttribute="bottom" id="k0D-Ek-nkn"/>
+                            <constraint firstItem="TX6-Ci-yFl" firstAttribute="top" secondItem="Vug-sT-kCO" secondAttribute="bottom" constant="5" id="khU-ML-PAw"/>
+                            <constraint firstItem="TX6-Ci-yFl" firstAttribute="trailing" secondItem="5Xm-Yy-O95" secondAttribute="trailing" constant="-80" id="r8H-sp-Amg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fwp-RJ-ect">
@@ -152,14 +205,18 @@
                     </navigationItem>
                     <connections>
                         <outlet property="locationMapView" destination="vsb-oX-QCQ" id="015-2e-CY2"/>
+                        <outlet property="recordButtonView" destination="Vug-sT-kCO" id="1fY-zP-MpJ"/>
+                        <outlet property="settingsButtonView" destination="TX6-Ci-yFl" id="cSj-0d-Iiq"/>
                         <segue destination="ONt-AF-yyp" kind="show" identifier="AddEntrySegue" id="RW5-yc-hdx"/>
+                        <segue destination="BFX-ud-BBe" kind="show" identifier="SettingSegue" id="Hjd-kC-Yiq"/>
+                        <segue destination="nKG-N7-haL" kind="show" identifier="RecordSegue" id="cGY-nQ-0GY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9NZ-QP-j2v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1683" y="58"/>
+            <point key="canvasLocation" x="1682.608695652174" y="57.589285714285708"/>
         </scene>
-        <!--Add Entry View Controller-->
+        <!--Add Entry-->
         <scene sceneID="z41-AV-s7P">
             <objects>
                 <viewController id="ONt-AF-yyp" customClass="AddEntryViewController" customModule="Fish_Pin" customModuleProvider="target" sceneMemberID="viewController">
@@ -211,7 +268,13 @@
                             <constraint firstItem="qoM-cU-eyN" firstAttribute="trailing" secondItem="qbZ-v6-iQJ" secondAttribute="trailing" id="qXg-z3-47k"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="uGL-Tq-IY5"/>
+                    <navigationItem key="navigationItem" title="Add Entry" id="wnC-MU-KXx">
+                        <barButtonItem key="rightBarButtonItem" title="Record" id="iMJ-zE-U4d">
+                            <connections>
+                                <action selector="recordButtonPressed:" destination="ONt-AF-yyp" id="Cgr-FG-8lE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="qbZ-v6-iQJ" id="qRA-dq-BDw"/>
                     </connections>
@@ -328,6 +391,94 @@
             </objects>
             <point key="canvasLocation" x="897" y="759"/>
         </scene>
+        <!--Records-->
+        <scene sceneID="CMo-Ri-bkM">
+            <objects>
+                <collectionViewController id="nKG-N7-haL" customClass="RecordsCollectionViewController" customModule="Fish_Pin" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="x1Q-ts-TYS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LBI-57-qw1">
+                            <size key="itemSize" width="120" height="120"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecordCell" id="bE3-P2-HKs" customClass="RecordCollectionViewCell" customModule="Fish_Pin" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iJm-GE-kkB">
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fisherman" translatesAutoresizingMaskIntoConstraints="NO" id="Mav-E0-age">
+                                            <rect key="frame" x="2" y="2" width="126" height="108"/>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="G53-mp-tS6">
+                                            <rect key="frame" x="2" y="112" width="126" height="16"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQD-c8-EMr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="43.5" height="16"/>
+                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9z-nu-fzw">
+                                                    <rect key="frame" x="82.5" y="0.0" width="43.5" height="16"/>
+                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="G53-mp-tS6" secondAttribute="bottom" constant="2" id="ERf-LQ-ZqX"/>
+                                        <constraint firstItem="G53-mp-tS6" firstAttribute="top" secondItem="Mav-E0-age" secondAttribute="bottom" constant="2" id="JTV-uv-FUY"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mav-E0-age" secondAttribute="trailing" constant="2" id="OFM-yT-ogs"/>
+                                        <constraint firstItem="Mav-E0-age" firstAttribute="top" secondItem="iJm-GE-kkB" secondAttribute="top" constant="2" id="hE6-mH-PaW"/>
+                                        <constraint firstAttribute="trailing" secondItem="G53-mp-tS6" secondAttribute="trailing" constant="2" id="rBT-P3-iDl"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mav-E0-age" secondAttribute="bottom" constant="20" id="tA0-zk-UMG"/>
+                                        <constraint firstItem="Mav-E0-age" firstAttribute="leading" secondItem="iJm-GE-kkB" secondAttribute="leading" constant="2" id="wPp-ub-GCp"/>
+                                        <constraint firstItem="G53-mp-tS6" firstAttribute="leading" secondItem="iJm-GE-kkB" secondAttribute="leading" constant="2" id="xqK-f0-abh"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="130" height="130"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="nKG-N7-haL" id="SOz-Kd-y1Q"/>
+                            <outlet property="delegate" destination="nKG-N7-haL" id="v9j-xa-iXd"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Records" id="dpA-1b-Mem"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I4p-RV-BXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1683" y="759"/>
+        </scene>
+        <!--Settings Table View Controller-->
+        <scene sceneID="fxL-hz-C6b">
+            <objects>
+                <tableViewController id="BFX-ud-BBe" customClass="SettingsTableViewController" customModule="Fish_Pin" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NnA-cf-P0a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="BFX-ud-BBe" id="NpG-Hs-ehU"/>
+                            <outlet property="delegate" destination="BFX-ud-BBe" id="iIB-L6-bwJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="kD9-uu-Nsz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L3c-cs-FlJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2358" y="759"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="59h-kP-pAb">
             <objects>
@@ -353,6 +504,8 @@
     <resources>
         <image name="FishPinLogo" width="127" height="93"/>
         <image name="Fisherman" width="247" height="115"/>
+        <image name="folder" catalog="system" width="128" height="97"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="loginBackground" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

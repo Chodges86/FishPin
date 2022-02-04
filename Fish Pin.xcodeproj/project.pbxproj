@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		671EADAA27AC87E5004BC93D /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671EADA927AC87E5004BC93D /* AddEntryViewController.swift */; };
+		6769572427ACD20200A1C0EE /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6769572327ACD20200A1C0EE /* SettingsTableViewController.swift */; };
+		6769572627AD9B2500A1C0EE /* RecordsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6769572527AD9B2500A1C0EE /* RecordsCollectionViewController.swift */; };
+		6769572827AD9B5C00A1C0EE /* RecordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6769572727AD9B5C00A1C0EE /* RecordCollectionViewCell.swift */; };
 		6783A49B270A699300A825AA /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6783A49A270A699300A825AA /* Entry.swift */; };
-		6783A49D270A6B1600A825AA /* EntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6783A49C270A6B1600A825AA /* EntryModel.swift */; };
 		679C9DE427052434007D9D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C9DE327052434007D9D72 /* AppDelegate.swift */; };
 		679C9DE627052434007D9D72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C9DE527052434007D9D72 /* SceneDelegate.swift */; };
 		679C9DE827052434007D9D72 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C9DE727052434007D9D72 /* LoginViewController.swift */; };
@@ -25,8 +27,10 @@
 
 /* Begin PBXFileReference section */
 		671EADA927AC87E5004BC93D /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
+		6769572327ACD20200A1C0EE /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		6769572527AD9B2500A1C0EE /* RecordsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCollectionViewController.swift; sourceTree = "<group>"; };
+		6769572727AD9B5C00A1C0EE /* RecordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCollectionViewCell.swift; sourceTree = "<group>"; };
 		6783A49A270A699300A825AA /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		6783A49C270A6B1600A825AA /* EntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryModel.swift; sourceTree = "<group>"; };
 		679C9DE027052434007D9D72 /* Fish Pin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fish Pin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		679C9DE327052434007D9D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		679C9DE527052434007D9D72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,10 +68,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6769572927AD9B6200A1C0EE /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				67D8D8C427AC91950060CD57 /* EntryTableViewCell.swift */,
+				6769572727AD9B5C00A1C0EE /* RecordCollectionViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		679C9DD727052434007D9D72 = {
 			isa = PBXGroup;
 			children = (
 				679C9DE227052434007D9D72 /* Fish Pin */,
+				679C9DEC27052438007D9D72 /* Assets.xcassets */,
+				679C9DEE27052438007D9D72 /* LaunchScreen.storyboard */,
+				679C9DF727052523007D9D72 /* GoogleService-Info.plist */,
+				679C9DF127052438007D9D72 /* Info.plist */,
 				679C9DE127052434007D9D72 /* Products */,
 				681CBA2C72E332F0B1B22CBF /* Pods */,
 				396E7467EBADF75120B7CE1C /* Frameworks */,
@@ -90,10 +107,7 @@
 				679C9DFB27052655007D9D72 /* Model */,
 				679C9DFA27052649007D9D72 /* Views */,
 				679C9DF927052634007D9D72 /* Controllers */,
-				679C9DEC27052438007D9D72 /* Assets.xcassets */,
-				679C9DEE27052438007D9D72 /* LaunchScreen.storyboard */,
-				679C9DF127052438007D9D72 /* Info.plist */,
-				679C9DF727052523007D9D72 /* GoogleService-Info.plist */,
+				6769572927AD9B6200A1C0EE /* CustomCells */,
 			);
 			path = "Fish Pin";
 			sourceTree = "<group>";
@@ -105,6 +119,8 @@
 				679C9DFC27053036007D9D72 /* RegisterViewController.swift */,
 				679C9E0027055BD3007D9D72 /* MapViewController.swift */,
 				671EADA927AC87E5004BC93D /* AddEntryViewController.swift */,
+				6769572327ACD20200A1C0EE /* SettingsTableViewController.swift */,
+				6769572527AD9B2500A1C0EE /* RecordsCollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -113,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				679C9DE927052434007D9D72 /* Main.storyboard */,
-				67D8D8C427AC91950060CD57 /* EntryTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -122,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				6783A49A270A699300A825AA /* Entry.swift */,
-				6783A49C270A6B1600A825AA /* EntryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,12 +268,14 @@
 				679C9DE827052434007D9D72 /* LoginViewController.swift in Sources */,
 				671EADAA27AC87E5004BC93D /* AddEntryViewController.swift in Sources */,
 				679C9DE427052434007D9D72 /* AppDelegate.swift in Sources */,
+				6769572427ACD20200A1C0EE /* SettingsTableViewController.swift in Sources */,
 				67D8D8C527AC91950060CD57 /* EntryTableViewCell.swift in Sources */,
 				679C9DE627052434007D9D72 /* SceneDelegate.swift in Sources */,
 				679C9E0127055BD3007D9D72 /* MapViewController.swift in Sources */,
 				679C9DFD27053036007D9D72 /* RegisterViewController.swift in Sources */,
-				6783A49D270A6B1600A825AA /* EntryModel.swift in Sources */,
+				6769572827AD9B5C00A1C0EE /* RecordCollectionViewCell.swift in Sources */,
 				6783A49B270A699300A825AA /* Entry.swift in Sources */,
+				6769572627AD9B2500A1C0EE /* RecordsCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +425,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S9BYCV72B7;
-				INFOPLIST_FILE = "Fish Pin/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -429,7 +445,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S9BYCV72B7;
-				INFOPLIST_FILE = "Fish Pin/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

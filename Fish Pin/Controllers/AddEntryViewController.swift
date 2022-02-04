@@ -17,8 +17,8 @@ class AddEntryViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.leftBarButtonItem?.tintColor = .black
-        self.navigationItem.rightBarButtonItem?.tintColor = .black
+        self.navigationController?.navigationBar.tintColor = .black
+        
     }
     
     override func viewDidLoad() {
@@ -35,11 +35,17 @@ class AddEntryViewController: UIViewController {
         self.tableView.register(entryCell, forCellReuseIdentifier: "EntryTableViewCell")
         
     }
+    
+    @IBAction func recordButtonPressed(_ sender: UIBarButtonItem) {
+      
+        
+    }
+    
 }
 
 // MARK: - TableView Datasource Methods
 
-extension AddEntryViewController: UITableViewDataSource {
+extension AddEntryViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return entryFieldTitles.count
