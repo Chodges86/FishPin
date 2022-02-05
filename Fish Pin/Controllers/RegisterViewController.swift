@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class RegisterViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -31,11 +31,11 @@ class RegisterViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
                     //TODO: Show alert with error message
-                    print(e)
+                    print(e.localizedDescription)
                 } else {
                     self.performSegue(withIdentifier: "RegisterToMap", sender: self)
                 }
-        }
+            }
         }
     } // End registerTapped
 }

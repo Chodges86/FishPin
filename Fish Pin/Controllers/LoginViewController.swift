@@ -25,7 +25,6 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         
-        self.tabBarController?.tabBar.isHidden = true
     }
     
     @IBAction func registerSegueTapped(_ sender: UIButton) {
@@ -34,17 +33,16 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginTapped(_ sender: UIButton) {
-        if let email = emailTextField.text, let password = passwordTextField.text {
+        if let email = emailTextField.text,
+           let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                 if let e = error {
-                    print(e)
+                    //TODO: Handle sign in error
+                    print(e.localizedDescription)
                 } else {
                     self.performSegue(withIdentifier: "LoginToMap", sender: self)                }
-                
             }
         }
-        
     }
-    
 }
 

@@ -29,7 +29,7 @@ class MapViewController: UIViewController {
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
         self.navigationItem.titleView?.contentMode = .scaleAspectFit
-       
+        
         self.tabBarController?.tabBar.isHidden = false
         
         recordButtonView.layer.cornerRadius = recordButtonView.frame.width/2
@@ -44,7 +44,7 @@ class MapViewController: UIViewController {
         settingsButtonView.layer.shadowOpacity = 0.3
         
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,20 +65,19 @@ class MapViewController: UIViewController {
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
         
         let firebaseAuth = Auth.auth()
-    do {
-      try firebaseAuth.signOut()
-        navigationController?.popToRootViewController(animated: true)
+        do {
+            try firebaseAuth.signOut()
+            navigationController?.popToRootViewController(animated: true)
+            
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
         
-    } catch let signOutError as NSError {
-      print("Error signing out: %@", signOutError)
-    }
-      
         
     }
     
     @IBAction func addEntryPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "AddEntrySegue", sender: self)
-        
     }
     
     @IBAction func recordButtonPressed(_ sender: UIButton) {
@@ -92,6 +91,7 @@ class MapViewController: UIViewController {
 }
 
 extension MapViewController: CLLocationManagerDelegate {
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.first != nil{
             

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		671EADAA27AC87E5004BC93D /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671EADA927AC87E5004BC93D /* AddEntryViewController.swift */; };
+		672894C227AE1381008CA08C /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 672894C027AE1381008CA08C /* CoreDataModel.xcdatamodeld */; };
 		6769572427ACD20200A1C0EE /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6769572327ACD20200A1C0EE /* SettingsTableViewController.swift */; };
 		6769572627AD9B2500A1C0EE /* RecordsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6769572527AD9B2500A1C0EE /* RecordsCollectionViewController.swift */; };
 		6769572827AD9B5C00A1C0EE /* RecordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6769572727AD9B5C00A1C0EE /* RecordCollectionViewCell.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		671EADA927AC87E5004BC93D /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
+		672894C127AE1381008CA08C /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		6769572327ACD20200A1C0EE /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6769572527AD9B2500A1C0EE /* RecordsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCollectionViewController.swift; sourceTree = "<group>"; };
 		6769572727AD9B5C00A1C0EE /* RecordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -104,7 +106,7 @@
 			children = (
 				679C9DE327052434007D9D72 /* AppDelegate.swift */,
 				679C9DE527052434007D9D72 /* SceneDelegate.swift */,
-				679C9DFB27052655007D9D72 /* Model */,
+				679C9DFB27052655007D9D72 /* Models */,
 				679C9DFA27052649007D9D72 /* Views */,
 				679C9DF927052634007D9D72 /* Controllers */,
 				6769572927AD9B6200A1C0EE /* CustomCells */,
@@ -133,12 +135,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		679C9DFB27052655007D9D72 /* Model */ = {
+		679C9DFB27052655007D9D72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				6783A49A270A699300A825AA /* Entry.swift */,
+				672894C027AE1381008CA08C /* CoreDataModel.xcdatamodeld */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		681CBA2C72E332F0B1B22CBF /* Pods */ = {
@@ -267,6 +270,7 @@
 			files = (
 				679C9DE827052434007D9D72 /* LoginViewController.swift in Sources */,
 				671EADAA27AC87E5004BC93D /* AddEntryViewController.swift in Sources */,
+				672894C227AE1381008CA08C /* CoreDataModel.xcdatamodeld in Sources */,
 				679C9DE427052434007D9D72 /* AppDelegate.swift in Sources */,
 				6769572427ACD20200A1C0EE /* SettingsTableViewController.swift in Sources */,
 				67D8D8C527AC91950060CD57 /* EntryTableViewCell.swift in Sources */,
@@ -479,6 +483,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		672894C027AE1381008CA08C /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				672894C127AE1381008CA08C /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 672894C127AE1381008CA08C /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 679C9DD827052434007D9D72 /* Project object */;
 }

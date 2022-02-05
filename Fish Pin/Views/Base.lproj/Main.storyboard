@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ymf-Vy-Jw3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ymf-Vy-Jw3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="XFt-fc-GQM">
-                                <rect key="frame" x="75" y="216.5" width="264" height="463"/>
+                                <rect key="frame" x="75" y="214.5" width="264" height="467"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="V3z-AK-PFY">
                                         <rect key="frame" x="8.5" y="0.0" width="247" height="208"/>
@@ -37,20 +37,20 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JJq-fT-ZTK" userLabel="TextFieldStackView">
                                         <rect key="frame" x="0.0" y="233" width="264" height="100"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="test@test.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0bb-ME-JKu">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@test.com" borderStyle="roundedRect" placeholder="test@test.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0bb-ME-JKu">
                                                 <rect key="frame" x="0.0" y="0.0" width="264" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="lDs-1i-2TO"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123456" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jLT-Bk-3w6">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="123456" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jLT-Bk-3w6">
                                                 <rect key="frame" x="0.0" y="50" width="264" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="eAx-Rb-opw"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -67,7 +67,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="lfg-m4-gLX"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="25"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -76,9 +76,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZU9-fK-BWh">
-                                        <rect key="frame" x="103.5" y="433" width="57" height="30"/>
+                                        <rect key="frame" x="101.5" y="433" width="61" height="34"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="18"/>
                                         <state key="normal" title="Register">
-                                            <color key="titleColor" red="0.27212902900000002" green="0.63399702309999995" blue="0.75130277869999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="registerSegueTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4bU-Nc-gZZ"/>
@@ -224,48 +225,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qbZ-v6-iQJ">
-                                <rect key="frame" x="0.0" y="324.5" width="414" height="537.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EntryField" id="bBw-LU-dIR" customClass="EntryTableViewCell" customModule="Fish_Pin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="75.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bBw-LU-dIR" id="bVt-vK-hLU">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Scv-Ex-Bfb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="75" id="tGt-go-dH3"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Scv-Ex-Bfb" firstAttribute="top" secondItem="bVt-vK-hLU" secondAttribute="top" id="1hd-PE-nlb"/>
-                                                <constraint firstItem="Scv-Ex-Bfb" firstAttribute="leading" secondItem="bVt-vK-hLU" secondAttribute="leading" id="5Ra-LW-cfE"/>
-                                                <constraint firstAttribute="bottom" secondItem="Scv-Ex-Bfb" secondAttribute="bottom" id="UOi-z8-WO3"/>
-                                                <constraint firstAttribute="trailing" secondItem="Scv-Ex-Bfb" secondAttribute="trailing" id="guL-Xe-Jjc"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="entryField" destination="Scv-Ex-Bfb" id="yMu-7L-75B"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="EcQ-rF-bZk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fisherman" translatesAutoresizingMaskIntoConstraints="NO" id="WaY-Gy-h45">
+                                <rect key="frame" x="88.5" y="143" width="237" height="179"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IA3-v5-bFH">
+                                <rect key="frame" x="20" y="422" width="374" height="430"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fish Type" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cxi-XZ-MtQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="53"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zOl-21-DDD">
+                                        <rect key="frame" x="0.0" y="63" width="374" height="53"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Length" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yk6-nP-T0F" userLabel="Length Text Field">
+                                        <rect key="frame" x="0.0" y="126" width="374" height="52.5"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lure" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YiJ-cE-Xj8" userLabel="Lure Text Field">
+                                        <rect key="frame" x="0.0" y="188.5" width="374" height="53"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date/Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQX-nO-obS">
+                                        <rect key="frame" x="0.0" y="251.5" width="374" height="53"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weather" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw5-e3-5L5">
+                                        <rect key="frame" x="0.0" y="314.5" width="374" height="52.5"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4yy-QO-HLY">
+                                        <rect key="frame" x="0.0" y="377" width="374" height="53"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="YiJ-cE-Xj8" secondAttribute="trailing" id="3S6-d6-7k7"/>
+                                    <constraint firstItem="YiJ-cE-Xj8" firstAttribute="leading" secondItem="IA3-v5-bFH" secondAttribute="leading" id="8uM-cF-s5U"/>
+                                    <constraint firstItem="zOl-21-DDD" firstAttribute="leading" secondItem="IA3-v5-bFH" secondAttribute="leading" id="C6e-wB-W41"/>
+                                    <constraint firstItem="yk6-nP-T0F" firstAttribute="leading" secondItem="IA3-v5-bFH" secondAttribute="leading" id="Gc6-3K-tGK"/>
+                                    <constraint firstAttribute="trailing" secondItem="zOl-21-DDD" secondAttribute="trailing" id="Jrq-EY-5pZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="cxi-XZ-MtQ" secondAttribute="trailing" id="OB6-Tw-MNL"/>
+                                    <constraint firstAttribute="trailing" secondItem="yk6-nP-T0F" secondAttribute="trailing" id="ROy-2a-m8U"/>
+                                    <constraint firstAttribute="trailing" secondItem="jw5-e3-5L5" secondAttribute="trailing" id="RRX-E7-oQf"/>
+                                    <constraint firstItem="jw5-e3-5L5" firstAttribute="leading" secondItem="IA3-v5-bFH" secondAttribute="leading" id="ZqR-dv-V9b"/>
+                                    <constraint firstItem="4yy-QO-HLY" firstAttribute="leading" secondItem="IA3-v5-bFH" secondAttribute="leading" id="aB7-jf-KQg"/>
+                                    <constraint firstItem="cxi-XZ-MtQ" firstAttribute="leading" secondItem="IA3-v5-bFH" secondAttribute="leading" id="jT8-0J-uQc"/>
+                                    <constraint firstAttribute="trailing" secondItem="CQX-nO-obS" secondAttribute="trailing" id="rfh-ys-gIo"/>
+                                    <constraint firstItem="CQX-nO-obS" firstAttribute="leading" secondItem="IA3-v5-bFH" secondAttribute="leading" id="x1d-qf-bUJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="4yy-QO-HLY" secondAttribute="trailing" id="zME-V5-EX3"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7I-QD-s99">
+                                <rect key="frame" x="301" y="300" width="24.5" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="camera" catalog="system"/>
+                                <connections>
+                                    <action selector="takePicturePressed:" destination="ONt-AF-yyp" eventType="touchUpInside" id="WRa-eS-hP5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qoM-cU-eyN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="qbZ-v6-iQJ" firstAttribute="leading" secondItem="qoM-cU-eyN" secondAttribute="leading" id="3Ny-1F-yHG"/>
-                            <constraint firstItem="qbZ-v6-iQJ" firstAttribute="height" secondItem="uMb-Gb-OTk" secondAttribute="height" multiplier="3:5" id="9BU-dN-acK"/>
-                            <constraint firstItem="qoM-cU-eyN" firstAttribute="bottom" secondItem="qbZ-v6-iQJ" secondAttribute="bottom" id="AAK-CN-k08"/>
-                            <constraint firstItem="qoM-cU-eyN" firstAttribute="trailing" secondItem="qbZ-v6-iQJ" secondAttribute="trailing" id="qXg-z3-47k"/>
+                            <constraint firstItem="IA3-v5-bFH" firstAttribute="leading" secondItem="qoM-cU-eyN" secondAttribute="leading" constant="20" id="22I-uq-Np3"/>
+                            <constraint firstItem="WaY-Gy-h45" firstAttribute="height" secondItem="uMb-Gb-OTk" secondAttribute="height" multiplier="1/5" id="DV4-5F-pNn"/>
+                            <constraint firstAttribute="bottom" secondItem="EcQ-rF-bZk" secondAttribute="bottom" id="DjF-Yw-wdR"/>
+                            <constraint firstItem="WaY-Gy-h45" firstAttribute="top" secondItem="qoM-cU-eyN" secondAttribute="top" constant="55" id="Iyu-tg-rEE"/>
+                            <constraint firstItem="EcQ-rF-bZk" firstAttribute="leading" secondItem="uMb-Gb-OTk" secondAttribute="leading" id="Jy4-QK-m7c"/>
+                            <constraint firstItem="K7I-QD-s99" firstAttribute="height" secondItem="WaY-Gy-h45" secondAttribute="height" multiplier="0.122905" id="Onw-oj-Cun"/>
+                            <constraint firstItem="K7I-QD-s99" firstAttribute="width" secondItem="WaY-Gy-h45" secondAttribute="width" multiplier="0.103376" id="TQE-VN-tsO"/>
+                            <constraint firstItem="WaY-Gy-h45" firstAttribute="centerX" secondItem="uMb-Gb-OTk" secondAttribute="centerX" id="XFj-qR-6fN"/>
+                            <constraint firstAttribute="trailing" secondItem="EcQ-rF-bZk" secondAttribute="trailing" id="ZxL-Aq-eDn"/>
+                            <constraint firstItem="IA3-v5-bFH" firstAttribute="top" secondItem="WaY-Gy-h45" secondAttribute="bottom" constant="100" id="djc-yt-42P"/>
+                            <constraint firstItem="EcQ-rF-bZk" firstAttribute="top" secondItem="uMb-Gb-OTk" secondAttribute="top" id="iPB-ZT-swg"/>
+                            <constraint firstItem="K7I-QD-s99" firstAttribute="bottom" secondItem="WaY-Gy-h45" secondAttribute="bottom" id="mty-CX-h1W"/>
+                            <constraint firstItem="qoM-cU-eyN" firstAttribute="trailing" secondItem="IA3-v5-bFH" secondAttribute="trailing" constant="20" id="saa-dB-6Qy"/>
+                            <constraint firstItem="K7I-QD-s99" firstAttribute="trailing" secondItem="WaY-Gy-h45" secondAttribute="trailing" id="uRW-a1-Wh9"/>
+                            <constraint firstItem="WaY-Gy-h45" firstAttribute="width" secondItem="uMb-Gb-OTk" secondAttribute="width" multiplier="1/1.75" id="w2s-BB-6EP"/>
+                            <constraint firstItem="qoM-cU-eyN" firstAttribute="bottom" secondItem="IA3-v5-bFH" secondAttribute="bottom" constant="10" id="wZi-2Q-3ED"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Entry" id="wnC-MU-KXx">
@@ -276,12 +326,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="qbZ-v6-iQJ" id="qRA-dq-BDw"/>
+                        <outlet property="cameraButton" destination="K7I-QD-s99" id="Sy7-Ox-6yV"/>
+                        <outlet property="dateTimeTextField" destination="CQX-nO-obS" id="SFG-pq-d4D"/>
+                        <outlet property="lengthTextField" destination="yk6-nP-T0F" id="PHI-ko-5q2"/>
+                        <outlet property="lureTextField" destination="YiJ-cE-Xj8" id="8dy-xV-sLI"/>
+                        <outlet property="notesTextField" destination="4yy-QO-HLY" id="RIO-0B-lK0"/>
+                        <outlet property="typeTextField" destination="cxi-XZ-MtQ" id="2u5-hy-BvX"/>
+                        <outlet property="weatherTextField" destination="jw5-e3-5L5" id="Rs4-3e-WBF"/>
+                        <outlet property="weightTextField" destination="zOl-21-DDD" id="Chm-8Z-fzn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHY-TT-xUU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2358" y="58"/>
+            <point key="canvasLocation" x="2357.971014492754" y="57.589285714285708"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Gbb-5P-tKB">
@@ -504,6 +561,7 @@
     <resources>
         <image name="FishPinLogo" width="127" height="93"/>
         <image name="Fisherman" width="247" height="115"/>
+        <image name="camera" catalog="system" width="128" height="94"/>
         <image name="folder" catalog="system" width="128" height="97"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="loginBackground" width="375" height="812"/>
