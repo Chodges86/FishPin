@@ -18,6 +18,8 @@ class MapViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     
+    let dataModel = DataModel()
+    
     override func viewWillAppear(_ animated: Bool) {
         
         // Setup the navigationController
@@ -43,12 +45,17 @@ class MapViewController: UIViewController {
         settingsButtonView.layer.shadowRadius = 5
         settingsButtonView.layer.shadowOpacity = 0.3
         
+        dataModel.loadRecord()
+        for record in dataModel.records {
+            print(record.latitude, record.longitude)
+            
+        }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationMapView.delegate = self
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
@@ -60,6 +67,7 @@ class MapViewController: UIViewController {
             
             // TODO: Show alert stating to turn on location services in settings
         }
+        
     }
     
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
@@ -77,7 +85,37 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func addEntryPressed(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "AddEntrySegue", sender: self)
+        
+        let newEntry = MyAnnotation()
+        newEntry.identifier = "FishLocation"
+        
+        
+        if let latitude = locationManager.location?.coordinate.latitude,
+           let longitude = locationManager.location?.coordinate.longitude {
+            
+            newEntry.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+            locationMapView.addAnnotation(newEntry)
+        } else {
+            //TODO: Determine best way to deal with a pin not being able to be dropped
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
+            self.performSegue(withIdentifier: "AddEntrySegue", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "AddEntrySegue" {
+            let destVC = segue.destination as! AddEntryViewController
+            if let latitude = locationManager.location?.coordinate.latitude,
+               let longitude = locationManager.location?.coordinate.longitude {
+                destVC.latitude = latitude
+                destVC.longitude = longitude
+            }
+        }
+        
     }
     
     @IBAction func recordButtonPressed(_ sender: UIButton) {
@@ -89,8 +127,9 @@ class MapViewController: UIViewController {
     }
     
 }
+// MARK: - CLLocationManager and MapView Delegate Methods
 
-extension MapViewController: CLLocationManagerDelegate {
+extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.first != nil{
@@ -131,5 +170,25 @@ extension MapViewController: CLLocationManagerDelegate {
         // TODO: Show alert with error
         print("locationManager failed with error")
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        guard let annotation = annotation as? MyAnnotation else {return nil}
+        
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "FishMarker")
+        
+        if annotation.identifier == "FishLocation" {
+            annotationView.glyphImage = UIImage(named: "FishIcon")
+            annotationView.glyphTintColor = .black
+            annotationView.markerTintColor = .white
+            annotationView.animatesWhenAdded = true
+            return annotationView
+        }
+       return annotationView
+    }
 }
 
+
+class MyAnnotation: MKPointAnnotation {
+    var identifier: String?
+}

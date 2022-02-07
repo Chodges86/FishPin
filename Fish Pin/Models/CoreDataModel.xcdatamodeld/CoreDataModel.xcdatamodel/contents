@@ -2,7 +2,9 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Record" representedClassName=".Record" syncable="YES" codeGenerationType="class">
         <attribute name="dateTime" optional="YES" attributeType="String"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="length" optional="YES" attributeType="String"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="lure" optional="YES" attributeType="String"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
@@ -10,6 +12,6 @@
         <attribute name="weight" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Record" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Record" positionX="-63" positionY="-18" width="128" height="164"/>
     </elements>
 </model>

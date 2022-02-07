@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		671EADAA27AC87E5004BC93D /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671EADA927AC87E5004BC93D /* AddEntryViewController.swift */; };
 		672894C227AE1381008CA08C /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 672894C027AE1381008CA08C /* CoreDataModel.xcdatamodeld */; };
+		672894C827B080CE008CA08C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672894C727B080CE008CA08C /* DataModel.swift */; };
+		672894CA27B0863C008CA08C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 672894C927B0863C008CA08C /* MapKit.framework */; };
 		6769572427ACD20200A1C0EE /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6769572327ACD20200A1C0EE /* SettingsTableViewController.swift */; };
 		6769572627AD9B2500A1C0EE /* RecordsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6769572527AD9B2500A1C0EE /* RecordsCollectionViewController.swift */; };
 		6769572827AD9B5C00A1C0EE /* RecordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6769572727AD9B5C00A1C0EE /* RecordCollectionViewCell.swift */; };
-		6783A49B270A699300A825AA /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6783A49A270A699300A825AA /* Entry.swift */; };
 		679C9DE427052434007D9D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C9DE327052434007D9D72 /* AppDelegate.swift */; };
 		679C9DE627052434007D9D72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C9DE527052434007D9D72 /* SceneDelegate.swift */; };
 		679C9DE827052434007D9D72 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C9DE727052434007D9D72 /* LoginViewController.swift */; };
@@ -29,10 +30,11 @@
 /* Begin PBXFileReference section */
 		671EADA927AC87E5004BC93D /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 		672894C127AE1381008CA08C /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		672894C727B080CE008CA08C /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		672894C927B0863C008CA08C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6769572327ACD20200A1C0EE /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6769572527AD9B2500A1C0EE /* RecordsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCollectionViewController.swift; sourceTree = "<group>"; };
 		6769572727AD9B5C00A1C0EE /* RecordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCollectionViewCell.swift; sourceTree = "<group>"; };
-		6783A49A270A699300A825AA /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		679C9DE027052434007D9D72 /* Fish Pin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fish Pin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		679C9DE327052434007D9D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		679C9DE527052434007D9D72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				672894CA27B0863C008CA08C /* MapKit.framework in Frameworks */,
 				D0898386FF4E171D08422FA4 /* Pods_Fish_Pin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +68,7 @@
 		396E7467EBADF75120B7CE1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				672894C927B0863C008CA08C /* MapKit.framework */,
 				B25B84E03695188DAECDA81D /* Pods_Fish_Pin.framework */,
 			);
 			name = Frameworks;
@@ -138,8 +142,8 @@
 		679C9DFB27052655007D9D72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6783A49A270A699300A825AA /* Entry.swift */,
 				672894C027AE1381008CA08C /* CoreDataModel.xcdatamodeld */,
+				672894C727B080CE008CA08C /* DataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,12 +277,12 @@
 				672894C227AE1381008CA08C /* CoreDataModel.xcdatamodeld in Sources */,
 				679C9DE427052434007D9D72 /* AppDelegate.swift in Sources */,
 				6769572427ACD20200A1C0EE /* SettingsTableViewController.swift in Sources */,
+				672894C827B080CE008CA08C /* DataModel.swift in Sources */,
 				67D8D8C527AC91950060CD57 /* EntryTableViewCell.swift in Sources */,
 				679C9DE627052434007D9D72 /* SceneDelegate.swift in Sources */,
 				679C9E0127055BD3007D9D72 /* MapViewController.swift in Sources */,
 				679C9DFD27053036007D9D72 /* RegisterViewController.swift in Sources */,
 				6769572827AD9B5C00A1C0EE /* RecordCollectionViewCell.swift in Sources */,
-				6783A49B270A699300A825AA /* Entry.swift in Sources */,
 				6769572627AD9B2500A1C0EE /* RecordsCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

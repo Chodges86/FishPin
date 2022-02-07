@@ -18,6 +18,10 @@ class AddEntryViewController: UIViewController {
     @IBOutlet weak var notesTextField: UITextField!
     @IBOutlet weak var cameraButton: UIButton!
     
+    var latitude = Double()
+    var longitude = Double()
+    
+    let dataModel = DataModel()
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -54,8 +58,18 @@ class AddEntryViewController: UIViewController {
            let weather = weatherTextField.text,
            let notes = notesTextField.text {
             
-            let newEntry = Entry(fishType: type, weight: weight, length: length, lure: lure, dateTime: dateTime, weather: weather, notes: notes)
-            print(newEntry)
+            let newEntry = Record(context: dataModel.context)
+            newEntry.type = type
+            newEntry.weight = weight
+            newEntry.length = length
+            newEntry.lure = lure
+            newEntry.dateTime = dateTime
+            newEntry.weather = weather
+            newEntry.notes = notes
+            newEntry.latitude = latitude
+            newEntry.longitude = longitude
+            
+            dataModel.saveRecord()
         }
         
     }
@@ -67,8 +81,6 @@ class AddEntryViewController: UIViewController {
         } completion: { _ in
             self.cameraButton.imageView?.tintColor = .black
         }
-
-      
     }
 }
 
