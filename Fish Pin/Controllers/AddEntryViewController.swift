@@ -47,7 +47,6 @@ class AddEntryViewController: UIViewController {
         
     }
     
-    
     @IBAction func recordButtonPressed(_ sender: UIBarButtonItem) {
       
         if let type = typeTextField.text,
@@ -70,6 +69,7 @@ class AddEntryViewController: UIViewController {
             newEntry.longitude = longitude
             
             dataModel.saveRecord()
+            navigationController?.popViewController(animated: true)
         }
         
     }
@@ -83,5 +83,21 @@ class AddEntryViewController: UIViewController {
         }
     }
 }
+// MARK: - Text Field Delegate Methods
 
-
+extension AddEntryViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+      
+        switch textField.tag {
+        case 1:
+            textField.text = "\(textField.text ?? "") lbs"
+        case 2:
+            textField.text = "\(textField.text ?? "") inches"
+        default:
+            break
+        }
+        
+    }
+    
+}

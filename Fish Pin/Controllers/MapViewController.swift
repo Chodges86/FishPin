@@ -19,6 +19,9 @@ class MapViewController: UIViewController {
     let locationManager = CLLocationManager()
     
     let dataModel = DataModel()
+ 
+    
+// MARK: - Lifecycle Methods
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -46,10 +49,7 @@ class MapViewController: UIViewController {
         settingsButtonView.layer.shadowOpacity = 0.3
         
         dataModel.loadRecord()
-        for record in dataModel.records {
-            print(record.latitude, record.longitude)
-            
-        }
+        placePins()
     }
     
     override func viewDidLoad() {
@@ -69,6 +69,8 @@ class MapViewController: UIViewController {
         }
         
     }
+ 
+// MARK: - IBAction functions
     
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
         
@@ -126,7 +128,22 @@ class MapViewController: UIViewController {
         performSegue(withIdentifier: "SettingSegue", sender: self)
     }
     
+// MARK: - Place Pins function
+    
+    func placePins() {
+        
+        for record in dataModel.records {
+            
+            let entry = MyAnnotation()
+            entry.identifier = "FishLocation"
+            entry.coordinate = CLLocationCoordinate2D(latitude: record.latitude, longitude: record.longitude)
+            locationMapView.addAnnotation(entry)
+        }
+        
+    }
+    
 }
+
 // MARK: - CLLocationManager and MapView Delegate Methods
 
 extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate {
@@ -142,8 +159,6 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate {
             let region = MKCoordinateRegion(center: coordinates, span: span)
             
             locationMapView.setRegion(region, animated: true)
-            
-            
         }
     }
     
@@ -188,7 +203,9 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate {
     }
 }
 
+// MARK: - MyAnnotation Class
 
+// For adding a way to identify types of pins as "FishLocation"
 class MyAnnotation: MKPointAnnotation {
     var identifier: String?
 }
