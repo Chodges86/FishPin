@@ -35,4 +35,18 @@ class DataModel {
         }
         
     }
+    
+    func getDateTime() -> String {
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = .current
+        dateFormatter.dateFormat = "MM/dd/yy  h:mm a"
+        let currentDate = dateFormatter.string(from: date)
+        
+        let dateTime = "\(currentDate)"
+        
+        return dateTime
+        
+    }
 }

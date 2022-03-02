@@ -26,6 +26,15 @@ class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         // Setup the navigationController
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
+        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0),
+                                          .foregroundColor: UIColor.white]
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationItem.hidesBackButton = true
         self.navigationItem.leftBarButtonItem?.tintColor = .black
@@ -34,20 +43,21 @@ class MapViewController: UIViewController {
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
         self.navigationItem.titleView?.contentMode = .scaleAspectFit
+
+        self.navigationController?.navigationBar.isHidden = false
         
-        self.tabBarController?.tabBar.isHidden = false
-        
+        // Set up the buttons appearance
         recordButtonView.layer.cornerRadius = recordButtonView.frame.width/2
         settingsButtonView.layer.cornerRadius = settingsButtonView.frame.width/2
-        
+
         recordButtonView.layer.shadowOffset = CGSize(width: 10, height: 10)
         recordButtonView.layer.shadowRadius = 5
         recordButtonView.layer.shadowOpacity = 0.3
-        
+
         settingsButtonView.layer.shadowOffset = CGSize(width: 10, height: 10)
         settingsButtonView.layer.shadowRadius = 5
         settingsButtonView.layer.shadowOpacity = 0.3
-        
+
         dataModel.loadRecord()
         placePins()
     }

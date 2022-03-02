@@ -10,6 +10,15 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
+        // Setup the navigationController
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
+        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0),
+                                          .foregroundColor: UIColor.white]
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         self.navigationController?.navigationBar.tintColor = .black
     }
 

@@ -22,29 +22,35 @@ class AddEntryViewController: UIViewController {
     var longitude = Double()
     
     let dataModel = DataModel()
+    var weatherManager = WeatherManager()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         
-        self.navigationController?.navigationBar.tintColor = .black
-        
-        // Set navigation bar to clear
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
-        
+        // Setup the navigationController
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
         // Setup for camera button
-        self.cameraButton.layer.cornerRadius = cameraButton.frame.width/2
-        self.cameraButton.layer.shadowOffset = CGSize(width: 10, height: 10)
-        self.cameraButton.layer.shadowRadius = 5
-        self.cameraButton.layer.shadowOpacity = 0.3
+        cameraButton.layer.cornerRadius = cameraButton.frame.width/2
+        cameraButton.layer.shadowOffset = CGSize(width: 10, height: 10)
+        cameraButton.layer.shadowRadius = 5
+        cameraButton.layer.shadowOpacity = 0.3
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        weatherManager.delegate = self
+        weatherManager.getWeather(latitude, longitude)
+        dateTimeTextField.text = dataModel.getDateTime()
     }
     
     @IBAction func recordButtonPressed(_ sender: UIBarButtonItem) {
@@ -90,14 +96,39 @@ extension AddEntryViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
       
         switch textField.tag {
-        case 1:
+        case 1: // Automatically inlude the unit of measurement
             textField.text = "\(textField.text ?? "") lbs"
-        case 2:
+        case 2: // Automatically inlude the unit of measurement
             textField.text = "\(textField.text ?? "") inches"
+        case 5:
+            if textField.text == "" {
+               //TODO: Replace the deleted text with weather data again if user deleted text and wants it back
+            }
         default:
             break
         }
         
+    }    
+}
+
+// MARK: - WeatherDelegate Methods
+
+extension AddEntryViewController: WeatherDelegate {
+    func didRecieveWeather(_ weather: WeatherData) {
+        
+        DispatchQueue.main.async {
+            let temp = String(weather.main.temp)
+            let description = weather.weather[0].description
+            self.weatherTextField.text = "\(description)  \(temp)°F"
+        }
+        
+        print(weather.main.temp)
+        print(weather.weather.description)
     }
+    
+    func didRecieveError(_ error: Error?) {
+        print(error!)
+    }
+    
     
 }
