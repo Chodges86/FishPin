@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "FishPinLogo 1.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "FishPinLogo 1@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "FishPinLogo 1@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "drawing.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

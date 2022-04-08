@@ -11,40 +11,36 @@ import MapKit
 import Firebase
 
 class MapViewController: UIViewController {
+    
+    
     @IBOutlet weak var recordButtonView: UIView!
     @IBOutlet weak var settingsButtonView: UIView!
-    
     @IBOutlet weak var locationMapView: MKMapView!
     
     let locationManager = CLLocationManager()
-    
     let dataModel = DataModel()
+    
+
  
     
 // MARK: - Lifecycle Methods
     
     override func viewWillAppear(_ animated: Bool) {
         
+        // Unhide Nav bar
+        navigationController?.isNavigationBarHidden = false
+        
         // Setup the navigationController
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .white
-        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0),
-                                          .foregroundColor: UIColor.white]
-        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationItem.hidesBackButton = true
-        self.navigationItem.leftBarButtonItem?.tintColor = .black
-        self.navigationItem.rightBarButtonItem?.tintColor = .black
+
         let logo = UIImage(named: "FishPinLogo.png")
         let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
-        self.navigationItem.titleView?.contentMode = .scaleAspectFit
-
-        self.navigationController?.navigationBar.isHidden = false
+        navigationItem.titleView = imageView
+        navigationItem.titleView?.contentMode = .scaleAspectFit
         
         // Set up the buttons appearance
         recordButtonView.layer.cornerRadius = recordButtonView.frame.width/2
@@ -57,9 +53,11 @@ class MapViewController: UIViewController {
         settingsButtonView.layer.shadowOffset = CGSize(width: 10, height: 10)
         settingsButtonView.layer.shadowRadius = 5
         settingsButtonView.layer.shadowOpacity = 0.3
-
+        
+        // Get data and layout pins from all recorded catches
         dataModel.loadRecord()
         placePins()
+        
     }
     
     override func viewDidLoad() {
@@ -70,12 +68,21 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         if CLLocationManager.locationServicesEnabled(){
-            
+
+            // Get the user's current location
             locationManager.requestLocation()
             locationManager.startUpdatingLocation()
         } else {
-            
+            // Location services disabled
             // TODO: Show alert stating to turn on location services in settings
+            print("Location Off")
+        }
+        
+        // If location privacy settings are not determined, ask the user to allow location services
+        if locationManager.authorizationStatus == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        } else {
+            locationManager.requestLocation()
         }
         
     }
@@ -120,14 +127,13 @@ class MapViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "AddEntrySegue" {
-            let destVC = segue.destination as! AddEntryViewController
+            let destVC = segue.destination as! EntryViewController
             if let latitude = locationManager.location?.coordinate.latitude,
                let longitude = locationManager.location?.coordinate.longitude {
                 destVC.latitude = latitude
                 destVC.longitude = longitude
             }
         }
-        
     }
     
     @IBAction func recordButtonPressed(_ sender: UIButton) {
@@ -141,15 +147,20 @@ class MapViewController: UIViewController {
 // MARK: - Place Pins function
     
     func placePins() {
+        var pinsArray = [MKPointAnnotation]()
+        // Remove annotations so that old pins that do not exist anymore are removed from view before placing current array of pins into the view
+        locationMapView.removeAnnotations(locationMapView.annotations)
         
+        // Loop through the records, create an annotation from lat and lon and add it the mapview
         for record in dataModel.records {
             
             let entry = MyAnnotation()
             entry.identifier = "FishLocation"
             entry.coordinate = CLLocationCoordinate2D(latitude: record.latitude, longitude: record.longitude)
-            locationMapView.addAnnotation(entry)
+            pinsArray.append(entry)
+            
         }
-        
+        locationMapView.addAnnotations(pinsArray)
     }
     
 }
@@ -193,7 +204,7 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         // TODO: Show alert with error
-        print("locationManager failed with error")
+        print("locationManager failed with error: \(error)")
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -201,6 +212,7 @@ extension MapViewController: CLLocationManagerDelegate, MKMapViewDelegate {
         guard let annotation = annotation as? MyAnnotation else {return nil}
         
         let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "FishMarker")
+        annotationView.displayPriority = .required
         
         if annotation.identifier == "FishLocation" {
             annotationView.glyphImage = UIImage(named: "FishIcon")

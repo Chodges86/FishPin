@@ -9,4 +9,6 @@ import UIKit
 
 class RecordCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var recordImage: UIImageView!
+    @IBOutlet weak var recordDate: UILabel!
 }

@@ -7,39 +7,64 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
 class RecordsCollectionViewController: UICollectionViewController {
+    
+    var recordsArray = [Record]()
+    let dataModel = DataModel()
+    var selectedRecord: Record?
     
     override func viewWillAppear(_ animated: Bool) {
         // Setup the navigationController
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .white
-        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0),
-                                          .foregroundColor: UIColor.white]
-        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        navigationController?.navigationBar.tintColor = .black
+        
+        dataModel.loadRecord()
+        recordsArray = dataModel.records
+        collectionView.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
        
     }
-
+//MARK - Collection View Delegate Methods
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20  
+        recordsArray.count
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        var cell = UICollectionViewCell()
+        let cell = UICollectionViewCell()
         
         if let recordCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecordCell", for: indexPath) as? RecordCollectionViewCell {
-            cell = recordCell
+            
+            if let image = UIImage(data: recordsArray[indexPath.row].image!) {
+                recordCell.recordImage.image = image
+            } else {
+                recordCell.recordImage.image = UIImage(named: "FishPinLogo")
+            }
+            recordCell.recordDate.text = recordsArray[indexPath.row].dateTime
+            
+          
+            return recordCell
         }
        return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedRecord = recordsArray[indexPath.row]
+        performSegue(withIdentifier: "RecordSegue", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RecordSegue" {
+            let destVC = segue.destination as! EntryViewController
+            destVC.recordToEdit = selectedRecord
+        }
     }
 }

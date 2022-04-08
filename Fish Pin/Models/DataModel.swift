@@ -14,13 +14,14 @@ class DataModel {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var records = [Record]()
+
     
     func saveRecord() {
         
         do {
             try context.save()
         } catch {
-            //Handle error
+            //TODO: Handle error
             print("Error saving to CoreData \(error)")
         }
     }
@@ -30,7 +31,7 @@ class DataModel {
         do {
             records = try context.fetch(request)
         } catch {
-            //Handle error
+            //TODO: Handle error
             print("Error loading records \(error)")
         }
         

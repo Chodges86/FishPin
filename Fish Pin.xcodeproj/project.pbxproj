@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		671EADAA27AC87E5004BC93D /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671EADA927AC87E5004BC93D /* AddEntryViewController.swift */; };
+		671EADAA27AC87E5004BC93D /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671EADA927AC87E5004BC93D /* EntryViewController.swift */; };
 		672894C227AE1381008CA08C /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 672894C027AE1381008CA08C /* CoreDataModel.xcdatamodeld */; };
 		672894C827B080CE008CA08C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672894C727B080CE008CA08C /* DataModel.swift */; };
 		672894CA27B0863C008CA08C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 672894C927B0863C008CA08C /* MapKit.framework */; };
@@ -31,7 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		671EADA927AC87E5004BC93D /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
+		671EADA927AC87E5004BC93D /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		672894C127AE1381008CA08C /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		672894C727B080CE008CA08C /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		672894C927B0863C008CA08C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -131,7 +131,7 @@
 				679C9DE727052434007D9D72 /* LoginViewController.swift */,
 				679C9DFC27053036007D9D72 /* RegisterViewController.swift */,
 				679C9E0027055BD3007D9D72 /* MapViewController.swift */,
-				671EADA927AC87E5004BC93D /* AddEntryViewController.swift */,
+				671EADA927AC87E5004BC93D /* EntryViewController.swift */,
 				6769572327ACD20200A1C0EE /* SettingsTableViewController.swift */,
 				6769572527AD9B2500A1C0EE /* RecordsCollectionViewController.swift */,
 			);
@@ -283,7 +283,7 @@
 			files = (
 				679C9DE827052434007D9D72 /* LoginViewController.swift in Sources */,
 				678387F427B2137700F9BDCE /* Secret.swift in Sources */,
-				671EADAA27AC87E5004BC93D /* AddEntryViewController.swift in Sources */,
+				671EADAA27AC87E5004BC93D /* EntryViewController.swift in Sources */,
 				672894C227AE1381008CA08C /* CoreDataModel.xcdatamodeld in Sources */,
 				679C9DE427052434007D9D72 /* AppDelegate.swift in Sources */,
 				6769572427ACD20200A1C0EE /* SettingsTableViewController.swift in Sources */,

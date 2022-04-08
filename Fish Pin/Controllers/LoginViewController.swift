@@ -16,17 +16,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     // print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+    // print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         // Set navigation bar to clear
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.isTranslucent = true
+//        navigationController?.view.backgroundColor = .clear
+        navigationController?.isNavigationBarHidden = true
         
     }
     
