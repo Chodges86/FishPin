@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class FilterTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         // Setup the navigationController
